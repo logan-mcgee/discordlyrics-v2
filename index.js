@@ -13,7 +13,7 @@ async function checkForNewSong() {
   let songData = false;
   while (!songData) {
     const sData = await spotify.checkForStateChange();
-    if (sData && (sData.item.uri != currentUri)) {
+    if (sData && (sData?.item?.uri != currentUri)) {
       songData = sData;
     }
     await sleep(config.song_refresh);
