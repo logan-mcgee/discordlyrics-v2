@@ -58,7 +58,7 @@ async function checkForStateChange() {
       return new Promise(resolve => resolve(curPlaying.data));
     }
   } catch (e) {
-    if (e.response.status === 401) {
+    if (e.response?.status === 401) {
       await refreshToken();
       spotifyToken = getSpotifyToken();
       console.log('token refreshed.');
